@@ -2,7 +2,7 @@
 
 import { addTodo } from "@/lib/api-service-server";
 import { redirect } from "next/navigation";
-import { Todo, token } from "@/app/types";
+import { Todo, TodoResponse, token } from "@/app/types";
 
 export default async function addTodoction(token: token, value: Todo) {
     const data = {
@@ -10,7 +10,7 @@ export default async function addTodoction(token: token, value: Todo) {
         description: value.description
     }
 
-    const result = await addTodo(token, data);
+    const result: TodoResponse = await addTodo(token, data);
 
     if (result.isSuccess) {
         redirect('/home')

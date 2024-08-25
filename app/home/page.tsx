@@ -23,7 +23,7 @@ import Link from 'next/link';
 export default function TodoApp() {
   const router = useRouter();
   const val = getCookieClient('LOGIN');
-  const [rafashToken, setRafashToken] = React.useState(generateToken());
+  const [rafashToken] = React.useState(generateToken());
   const [id_removed, setId, setIdRemoved] = useTodoStore((state: any) => [state.id_removed, state.setId, state.setIdRemoved]);
   const { data, isLoading } = useListTodo(val, rafashToken);
   const { isLoading: deleteLoading } = useDeleteTodo(val, id_removed);
@@ -35,8 +35,8 @@ export default function TodoApp() {
   }
 
   const handleDelete = async (id: string) => {
-    setRafashToken(generateToken());
     setIdRemoved(id);
+    window.location.reload();
   }
   
   const columns = [

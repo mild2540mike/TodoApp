@@ -17,3 +17,8 @@ export interface TodoState {
   setId: (id: string) => void;
   id: string;
 }
+
+export interface TodoResponse {
+  isSuccess: string,
+  data: object
+}
