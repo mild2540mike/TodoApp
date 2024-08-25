@@ -1,7 +1,8 @@
-# TodoApp
+<!-- structure  -->
 C:.
 |   .env
 |   .eslintrc.json
+|   .gitattributes
 |   .gitignore
 |   middleware.ts
 |   next-env.d.ts
@@ -80,7 +81,6 @@ C:.
 |   |   encryptedLocalStorage.ts
 |   |   encryption-utils.ts
 |   |   http-response.ts
-|   |   providers.ts
 |   |
 |   \---Providers.tsx
 +---public
